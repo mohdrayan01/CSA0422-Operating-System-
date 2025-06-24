@@ -5,7 +5,9 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 
-#define SHM_SIZE 1024 // Size of the shared memory segmentint main() {
+#define SHM_SIZE 1024 // Size of the shared memory segment
+int main() 
+{
 key_t key = ftok("shmfile", 65); // Generate a unique key for the shared memory segment
 // Create a new shared memory segment (or get the identifier of anexisting one)
 int shmid = shmget(key, SHM_SIZE, IPC_CREAT | 0666);if (shmid == -1) 
