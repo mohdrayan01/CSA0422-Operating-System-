@@ -22,7 +22,8 @@ if (shm_ptr == (char*)(-1))
 perror("shmat");
 exit(EXIT_FAILURE);
 }
-// Write data to the shared memory strcpy(shm_ptr,"Hello, shared memory!");
+// Write data to the shared memory 
+strcpy(shm_ptr,"Hello, shared memory!");
 // Detach the shared memory segment from the process
 if (shmdt(shm_ptr) == -1) 
 {
