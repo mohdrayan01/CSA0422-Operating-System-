@@ -24,13 +24,13 @@ exit(EXIT_FAILURE);
 }
 // Write data to the shared memory 
 strcpy(shm_ptr,"Hello, shared memory!");
+printf("Data written to shared memory: %s\n", shm_ptr);
 // Detach the shared memory segment from the process
 if (shmdt(shm_ptr) == -1) 
 {
 perror("shmdt");
 exit(EXIT_FAILURE);
 }
-printf("Data written to shared memory: %s\n", shm_ptr);
 // Optional: Remove the shared memory segment
 if (shmctl(shmid, IPC_RMID, NULL) == -1) 
 {
